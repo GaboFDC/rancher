@@ -118,6 +118,13 @@ var (
 		"Enable UI Extensions when starting Rancher",
 		true,
 		false,
+		true,
+	)
+	OnDiskSteveCache = newFeature(
+		"on-disk-steve-cache",
+		"[Experimental]: Allow Steve to cache resources using SQLite to improve performance and provide additional UI sorting/filtering features.",
+		false,
+		false,
 		true)
 )
 

@@ -196,16 +196,25 @@ func New(ctx context.Context, clientConfg clientcmd.ClientConfig, opts *Options)
 		return nil, err
 	}
 
-	steve, err := steveserver.New(ctx, restConfig, &steveserver.Options{
+	var steve *steveserver.Server
+	serverOptions := &steveserver.Options{
 		ServerVersion:   settings.ServerVersion.Get(),
 		Controllers:     steveControllers,
 		AccessSetLookup: wranglerContext.ASL,
 		AuthMiddleware:  steveauth.ExistingContext,
 		Next:            ui.New(wranglerContext.Mgmt.Preference().Cache(), wranglerContext.Mgmt.ClusterRegistrationToken().Cache()),
 		ClusterRegistry: opts.ClusterRegistry,
-	})
-	if err != nil {
-		return nil, err
+	}
+	if features.OnDiskSteveCache.Enabled() {
+		steve, err = steveserver.NewAlpha(ctx, restConfig, serverOptions)
+		if err != nil {
+			return nil, err
+		}
+	} else {
+		steve, err = steveserver.New(ctx, restConfig, serverOptions)
+		if err != nil {
+			return nil, err
+		}
 	}
 
 	clusterProxy, err := proxy.NewProxyMiddleware(wranglerContext.K8s.AuthorizationV1(),

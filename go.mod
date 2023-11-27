@@ -9,6 +9,8 @@ replace (
 
 	github.com/knative/pkg => github.com/rancher/pkg v0.0.0-20190514055449-b30ab9de040e
 	github.com/matryer/moq => github.com/rancher/moq v0.0.0-20200712062324-13d1f37d2d77
+	github.com/rancher/lasso => github.com/rmweir/lasso v0.0.0-20240530231637-904ac862fca4
+
 	github.com/rancher/rancher/pkg/apis => ./pkg/apis
 	github.com/rancher/rancher/pkg/client => ./pkg/client
 
@@ -59,8 +61,6 @@ replace (
 require (
 	github.com/antihax/optional v1.0.0
 	github.com/containers/image/v5 v5.30.0
-	github.com/rancher/rancher/pkg/apis v0.0.0-20240529155832-64dbde013b4c
-	github.com/rancher/shepherd v0.0.0-20240530155239-a3783b7c7f54
 	go.qase.io/client v0.0.0-20231114201952-65195ec001fa
 )
 
@@ -133,10 +133,12 @@ require (
 	github.com/rancher/lasso v0.0.0-20240424194130-d87ec407d941
 	github.com/rancher/machine v0.15.0-rancher113
 	github.com/rancher/norman v0.0.0-20240503193601-9f5f6586bb5b
+	github.com/rancher/rancher/pkg/apis v0.0.0-20240529155832-64dbde013b4c
 	github.com/rancher/rancher/pkg/client v0.0.0
 	github.com/rancher/remotedialer v0.3.2
 	github.com/rancher/rke v1.6.0-rc4
-	github.com/rancher/steve v0.0.0-20240510175329-a9bf8c7e9cad
+	github.com/rancher/shepherd v0.0.0-20240530205615-2eebe64ba818
+	github.com/rancher/steve v0.0.0-20240530231829-10610d61fb71
 	github.com/rancher/system-upgrade-controller/pkg/apis v0.0.0-20210727200656-10b094e30007
 	github.com/rancher/wrangler/v2 v2.2.0-rc6
 	github.com/robfig/cron v1.1.0
@@ -160,9 +162,9 @@ require (
 	gopkg.in/yaml.v2 v2.4.0
 	gopkg.in/yaml.v3 v3.0.1
 	helm.sh/helm/v3 v3.14.3
-	k8s.io/api v0.29.4
+	k8s.io/api v0.30.0
 	k8s.io/apiextensions-apiserver v0.29.4
-	k8s.io/apimachinery v0.29.4
+	k8s.io/apimachinery v0.30.0
 	k8s.io/apiserver v0.29.4
 	k8s.io/cli-runtime v0.29.3
 	k8s.io/client-go v12.0.0+incompatible
@@ -216,6 +218,7 @@ require (
 	github.com/containers/storage v1.53.0 // indirect
 	github.com/cyberphone/json-canonicalization v0.0.0-20231217050601-ba74d44ecf5f // indirect
 	github.com/distribution/reference v0.5.0 // indirect
+	github.com/dustin/go-humanize v1.0.1 // indirect
 	github.com/evanphx/json-patch/v5 v5.7.0 // indirect
 	github.com/go-jose/go-jose/v3 v3.0.3 // indirect
 	github.com/go-logr/stdr v1.2.2 // indirect
@@ -232,7 +235,8 @@ require (
 	github.com/google/s2a-go v0.1.7 // indirect
 	github.com/googleapis/enterprise-certificate-proxy v0.3.2 // indirect
 	github.com/grpc-ecosystem/grpc-gateway/v2 v2.18.0 // indirect
-	github.com/klauspost/cpuid/v2 v2.0.9 // indirect
+	github.com/hashicorp/golang-lru/v2 v2.0.7 // indirect
+	github.com/klauspost/cpuid/v2 v2.2.7 // indirect
 	github.com/klauspost/pgzip v1.2.6 // indirect
 	github.com/kr/fs v0.1.0 // indirect
 	github.com/letsencrypt/boulder v0.0.0-20230907030200-6d76a0f91e1e // indirect
@@ -247,13 +251,15 @@ require (
 	github.com/miekg/pkcs11 v1.1.1 // indirect
 	github.com/mistifyio/go-zfs/v3 v3.0.1 // indirect
 	github.com/moby/sys/user v0.1.0 // indirect
+	github.com/ncruces/go-strftime v0.1.9 // indirect
 	github.com/oklog/ulid v1.3.1 // indirect
 	github.com/opencontainers/runtime-spec v1.2.0 // indirect
 	github.com/opencontainers/selinux v1.11.0 // indirect
 	github.com/ostreedev/ostree-go v0.0.0-20210805093236-719684c64e4f // indirect
 	github.com/pkg/browser v0.0.0-20240102092130-5ac0b6a4141c // indirect
 	github.com/proglottis/gpgme v0.1.3 // indirect
-	github.com/rancher/wrangler v1.1.1 // indirect
+	github.com/rancher/wrangler v1.1.2 // indirect
+	github.com/remyoudompheng/bigfft v0.0.0-20230129092748-24d4a6f8daec // indirect
 	github.com/secure-systems-lab/go-securesystemslib v0.8.0 // indirect
 	github.com/sigstore/fulcio v1.4.3 // indirect
 	github.com/sigstore/rekor v1.2.2 // indirect
@@ -278,6 +284,13 @@ require (
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20231120223509-83a465c0220f // indirect
 	gopkg.in/go-jose/go-jose.v2 v2.6.3 // indirect
 	k8s.io/pod-security-admission v0.29.3 // indirect
+	modernc.org/gc/v3 v3.0.0-20240107210532-573471604cb6 // indirect
+	modernc.org/libc v1.49.3 // indirect
+	modernc.org/mathutil v1.6.0 // indirect
+	modernc.org/memory v1.8.0 // indirect
+	modernc.org/sqlite v1.29.10 // indirect
+	modernc.org/strutil v1.2.0 // indirect
+	modernc.org/token v1.1.0 // indirect
 )
 
 require (
