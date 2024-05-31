@@ -1866,8 +1866,8 @@ github.com/rancher/lasso v0.0.0-20240424194130-d87ec407d941 h1:1SvuoeyfANRvKVJUS
 github.com/rancher/lasso v0.0.0-20240424194130-d87ec407d941/go.mod h1:pYKOe2r/5O0w3ypoc7xHQF8LvWCp5PsNRea1Jpq3vBU=
 github.com/rancher/machine v0.15.0-rancher113 h1:Skt/6qeW6aBOkDPf3OrPxZKskD97o2brMh+Rq+21vDc=
 github.com/rancher/machine v0.15.0-rancher113/go.mod h1:tLK/GF180jFXuo0b2YdlztmF5dmbAb4UfY4WfmSS5Nk=
-github.com/rancher/moq v0.0.0-20200712062324-13d1f37d2d77 h1:k+vzmkZQsH06rZnDr+phskSixG9ByNj9gVdzHcc8nxw=
-github.com/rancher/moq v0.0.0-20200712062324-13d1f37d2d77/go.mod h1:wpITyDPTi/Na5h73XkbuEf2AP9fbgrIGqqxVzFhYD6U=
+github.com/rancher/moq v0.0.0-20190404221404-ee5226d43009 h1:Xsxh7fX3+2wAUJtPy8g2lZh0cYuyifqhBL0vxCIYojs=
+github.com/rancher/moq v0.0.0-20190404221404-ee5226d43009/go.mod h1:wpITyDPTi/Na5h73XkbuEf2AP9fbgrIGqqxVzFhYD6U=
 github.com/rancher/norman v0.0.0-20240503193601-9f5f6586bb5b h1:9k8VOhRi6ZIZ8rBlQG8ON9eG+ukqThNeXJ2e6CzZO78=
 github.com/rancher/norman v0.0.0-20240503193601-9f5f6586bb5b/go.mod h1:xJ0CLJUG9SvtyuPzPA8ATh2SjwiqXGfE+pPh7uVhJzQ=
 github.com/rancher/qase-go/client v0.0.0-20231114201952-65195ec001fa h1:/qeYlQVfyvsO5yY0dZmm7mRTAsDm54jACiRDx3LAwsA=
